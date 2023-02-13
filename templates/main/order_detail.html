@@ -12,7 +12,7 @@
             {% endfor %}
         </ul>
     </p>
-    <p>Стоимость {{ order.total }}₽</p>
+    <p>Стоимость {{ order.total }}</p>
     <form action="/buy_order/{{ order.id }}" method="get">
         <button id="buy-button">Buy</button>
     </form>

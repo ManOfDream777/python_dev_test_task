@@ -9,8 +9,9 @@ from rest_framework.response import Response
 from .models import Item, Order
 
 import stripe
+import os
 
-stripe.api_key = 'sk_test_51KXTr3C955xrRoez1GZsib4A2y3s4h5hmGZxHfTVy8zkqm2kmlgW6jpzPPr4z9U82Cwfv9nD2dSsv54uWMp99sm500morlebDt'
+stripe.api_key = os.environ.get('STRIPE_TOKEN')
 
 
 class ItemView(DetailView):
@@ -25,7 +26,7 @@ class OrderView(DetailView):
 
 class APIBuyItemView(APIView):
 
-    def get(self, request: Request | HttpRequest, **kwargs) -> Response:
+    def get(self, request: HttpRequest, **kwargs) -> Response:
         host = request.get_host()
         scheme = request.scheme
         id = kwargs.get('pk')

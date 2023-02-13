@@ -8,7 +8,7 @@
 ## Установка и запуск (Локально)
 
 ```bash
-  git clone ...
+  git clone https://github.com/Urodec777/python_dev_test_task.git
   cd django_stripe
 ```
     

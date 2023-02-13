@@ -87,7 +87,7 @@ class APIBuyOrderView(APIView):
                             'name': order,
                             'description': ', '.join([item.name for item in order.items.all()])
                         },
-                        'unit_amount': order.total(),
+                        'unit_amount': order.total() * 100,
                     },
                     'quantity': 1,
                     # 'tax_rates': tax was not implemented.

@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+{% block title %}
+    Buy {{ order }}
+{% endblock %}
+{% block content %}
+    <h1>{{ order }}</h1>
+    <p><ul>
+            {% for item in order.items.all %}
+                <li>
+                    {{ item.name }}
+                </li>
+            {% endfor %}
+        </ul>
+    </p>
+    <p>Стоимость {{ order.total }}₽</p>
+    <form action="/buy_order/{{ order.id }}" method="get">
+        <button id="buy-button">Buy</button>
+    </form>
+
+{% endblock %}
+</body>
+</html>

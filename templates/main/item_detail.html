@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+{% block title %}
+  Buy {{ item.name }}
+{% endblock %}
+{% block content %}
+    <h1>{{ item.name }}</h1>
+    <p>{{ item.description }}</p>
+    <p>{{ item.price }}</p>
+    <form action="/buy/{{ item.id }}" method="get">
+      <button id="buy-button">Buy</button>
+    </form>
+{% endblock %}
